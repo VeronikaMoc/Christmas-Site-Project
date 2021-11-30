@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-columns: 10vw 1fr 10vw;
+    grid-template-rows: 20vh 20vh 60vh 20vh 120vh 20vh 20vh 60vh 20vh 20vh;
+    grid-template-areas: "header header header" 
+                         "girland girland girland"
+                         "hero-img hero-img hero-img"
+                         "space space space"
+                         ". navigation ."
+                         "space space space"
+                         "girland girland girland"
+                         ". text ."
+                         "space space space"
+                         "footer footer footer";
+}
+
+nav {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". logo . language ."
+                         ". logo . . .";
+
+    border:orangered solid 5px;
+    background-color: palegreen;
+}
+
+nav>img {
+    grid-area: logo;
+}
+
+nav>ul {
+    grid-area: language;
+}
