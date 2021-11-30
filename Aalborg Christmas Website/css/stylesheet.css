@@ -3,37 +3,108 @@ body {
     padding: 0;
     display: grid;
     grid-template-columns: 10vw 1fr 10vw;
-    grid-template-rows: 100vh 120vh 80vh 20vh ;
+    grid-template-rows: 100vh 120vh 20vh 80vh 20vh ;
     grid-template-areas: "header header header" 
                          ". main ."
+                         "guir guir guir"
                          ". section ."
                          "footer footer footer";
-    grid-row-gap: 5px;                     
+    grid-row-gap: 2rem;                     
 }
+
+/*header*/ 
+
  header {
     grid-area: header;
     display: grid;
     grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 20vh 60vh;
     grid-template-areas: ". logo . language ."
-                         ". logo . . .";
+                         ". logo . . ."
+                         "guirland guirland guirland guirland guirland"
+                         "hero-img hero-img hero-img hero-img hero-img";
                          
     border:rgb(0, 0, 0) solid 2px;
  }
-nav {
+header>nav {
     grid-area: language;
 }
 
-nav>img {
+header>img {
     grid-area: logo;
+}
+
+header>figure {
+    grid-area: guirland; 
+}
+
+.hero-image {
+    grid-area: hero-img;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+header>figure{
+    background-color: black;
+    margin: 0;
+}
+
+/*main*/
+
+main>figure {
+    background-color: black;
+    margin: 0;
 }
 
 main{
     grid-area: main; 
     border:rgb(0, 0, 0) solid 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    grid-template-areas: "time-img time-text landscape-img" 
+                         "cabins-text cabins-img history-text"
+                         "events-img events-text history-img";
+    grid-row-gap: 0; 
 }
 
-section {
+.time-img {
+    grid-area: time-img;
+}
+.time-text {
+    grid-area: time-text;
+}
+.landscape-img {
+    grid-area: landcape-img;
+}
+.cabins-text {
+    grid-area: cabins-text;
+}
+.cabins-img {
+    grid-area: cabins-img;
+}
+.history-text{
+    grid-area: history-text;
+}
+.events-img {
+    grid-area: events-img;
+}
+.events-text {
+    grid-area: events-text;
+}
+.history-img{
+    grid-area: history-img;
+}
+
+/*section* guirland*/
+
+.guirland.section {
+    grid-area: guir;
+    border:rgb(0, 0, 0) solid 2px;
+}
+
+/*section*/
+
+.text {
     grid-area: section;
     border:rgb(0, 0, 0) solid 2px;
 }
@@ -41,4 +112,26 @@ section {
 footer{
     grid-area: footer;
     border:rgb(0, 0, 0) solid 2px;
+
+    
+    display: grid;
+    grid-template-columns: 1fr 10vw 10vw 10vw 1fr;
+    grid-template-rows: 1fr  ;
+    grid-template-areas: ". icon-facebook icon-instagram icon-web .";
+    grid-row-gap: 0; 
+}
+
+
+.icon-facebook {
+    grid-area: icon-facebook ;
+}
+.icon-instagram {
+    grid-area:icon-instagram  ;
+}
+.icon-web{
+    grid-area: icon-web;
+}
+
+footer>section>figure>a{
+    background-color: black;
 }
