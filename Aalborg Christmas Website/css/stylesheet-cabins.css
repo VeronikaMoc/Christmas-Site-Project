@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f6e9e3 ;  
+    display: grid;
+    grid-template-columns: ;
+    grid-template-rows: ;
+    grid-template-areas: ;
+    grid-row-gap: 2rem;
+}
