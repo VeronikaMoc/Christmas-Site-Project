@@ -59,11 +59,6 @@ header > figure {
   background-position: center;
 }
 
-<<<<<<< Updated upstream
-=======
-header > figure {
-}
->>>>>>> Stashed changes
 
 .guirland {
   background-image: url(../icons/guirlandsnowylong.png);
@@ -189,12 +184,10 @@ main > article {
     justify-items: center;
 }
 
-<<<<<<< Updated upstream
-=======
 main > article > p {
     grid-area: nav-text;
 }
->>>>>>> Stashed changes
+
 
 main > article > h2 {
     grid-area: nav-heading;
