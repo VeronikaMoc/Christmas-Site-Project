@@ -201,7 +201,7 @@ main > article > h2 {
 
 main > article > div {
     grid-area: nav-button;
-    margin: o;
+    margin: 0;
 }
 
 main > article > div > a{

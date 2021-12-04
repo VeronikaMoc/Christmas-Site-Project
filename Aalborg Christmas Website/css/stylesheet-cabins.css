@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
 
 body {
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: 10vw 1fr 10vw;
-  grid-template-rows: 10vh 300vh 20vh;
+  grid-template-rows: 10vh 400vh 20vh;
   grid-template-areas:
     "header header header"
     ". main ."
@@ -25,7 +25,6 @@ body {
 /*header*/
 header {
   grid-area: header;
-  /*position: fixed;*/
   display: grid;
   grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
   grid-template-rows: 1fr 1fr;
@@ -47,7 +46,6 @@ header > nav {
   height: 10vh;
   justify-self: center;
 }
-
 
 nav ul {
   list-style-type: none;
@@ -88,16 +86,16 @@ nav > ul > li > ul > li:hover {
 /*main*/
 main {
   grid-area: main;
-  
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 30vh 30vh 60vh 30vh 1fr;
-  grid-template-areas: 
-  "title" 
-  "guirland1" 
-  "map" 
-  "guirland2" 
-  "articles";
+  grid-template-areas:
+    "title"
+    "guirland1"
+    "map"
+    "guirland2"
+    "articles";
 }
 
 h1 {
@@ -114,8 +112,8 @@ h1 {
   grid-area: guirland1;
 }
 .guirland.two {
-    grid-area: guirland2;
-  }
+  grid-area: guirland2;
+}
 
 .map {
   grid-area: map;
@@ -125,15 +123,187 @@ h1 {
 }
 
 .map > img {
-    max-width: 80vw ;
-    max-height: 60vh;
-  }
+  max-width: 80vw;
+  max-height: 60vh;
+}
 
 .articles {
   grid-area: articles;
+  background-color: #ffffff;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "article1"
+    "article2"
+    "article3"
+    "article4"
+    "article5";
+  margin: 0;
+  padding: 0;
+}
+
+main > div > article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "stall-heading stall-heading stall-img"
+    "stall-text stall-text stall-img"
+    "stall-button stall-button stall-img";
+  margin: 0;
+  padding: 0;
+}
+
+.even {
+  grid-template-areas:
+    "stall-img stall-heading stall-heading"
+    "stall-img stall-text stall-text" "stall-img stall-button stall-button";
+}
+
+.articles > article > h3 {
+  grid-area: stall-heading;
+  font-size: 46px;
+  color: #1b6246;
+  font-family: 'Style Script', cursive;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.articles > article > p {
+  grid-area: stall-text;
+}
+
+.articles > article > .button {
+  grid-area: stall-button;
+  align-self: center;
+  justify-self: center;
+}
+
+.articles > article > .button > a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #1b6246;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: 0.3s ease-in;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.articles > article > .button > a:hover {
+  text-decoration: none;
+  color: #c91116;
+  background-color: #c5ad9d;
+}
+
+.articles > article > figure {
+  grid-area: stall-img;
+}
+
+.article-one {
+  grid-area: article1;
+}
+
+.article-two {
+  grid-area: article2;
+}
+
+.article-three {
+  grid-area: article3;
+}
+
+.article-four {
+  grid-area: article4;
+}
+
+.article-five {
+  grid-area: article5;
+}
+
+
+
+.articles > article > figure {
+  margin: 0;
+  padding: 0;
+}
+
+.stall-img-1 {
+  background-image: url(../icons/cabins/clothes.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stall-img-2 {
+  background-image: url(../icons/cabins/decorations.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stall-img-3 {
+  background-image: url(../icons/cabins/drinks.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stall-img-4 {
+  background-image: url(../icons/cabins/food.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stall-img-5 {
+  background-image: url(../icons/cabins/tupperware.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /*footer*/
 footer {
   grid-area: footer;
+  background-color: #1b6246;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: 1fr 10vw 10vw 10vw 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". icon-facebook icon-instagram icon-web .";
+  column-gap: 1vw;
+}
+
+.icon-facebook {
+  grid-area: icon-facebook;
+  background-image: url(../icons/FB.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+.icon-instagram {
+  grid-area: icon-instagram;
+  background-image: url(../icons/IG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+.icon-web {
+  grid-area: icon-web;
+  background-image: url(../icons/Aalborgweb.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 100px;
 }
