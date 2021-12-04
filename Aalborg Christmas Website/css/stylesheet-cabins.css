@@ -1,10 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f6e9e3 ;  
-    display: grid;
-    grid-template-columns: ;
-    grid-template-rows: ;
-    grid-template-areas: ;
-    grid-row-gap: 2rem;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 10vw 1fr 10vw;
+  grid-template-rows: 10vh 300vh 20vh;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  grid-row-gap: 2rem;
+  background-color: #f6e9e3;
+}
+.guirland {
+  background-image: url(../icons/guirlandsnowy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+/*header*/
+header {
+  grid-area: header;
+  /*position: fixed;*/
+  display: grid;
+  grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    ". logo . language ."
+    ". logo . . .";
+
+  background-color: #1b6246;
+}
+header > nav {
+  grid-area: language;
+}
+
+.logo-box {
+  grid-area: logo;
+}
+.logo {
+  width: 8vh;
+  height: 10vh;
+  justify-self: center;
+}
+
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  padding: 10px;
+  background-color: #ffffff;
+  justify-self: center;
+  text-align: center;
+  transition: 0.3s ease-in;
+  color: #1b6246;
+}
+
+nav > ul > li > ul > li {
+  margin-top: 15px;
+}
+
+nav > ul > li > ul {
+  display: none;
+}
+
+nav > ul > li:hover {
+  cursor: pointer;
+  background-color: #1b6246;
+  color: #ffffff;
+}
+
+nav > ul > li:hover > ul {
+  display: contents;
+}
+
+nav > ul > li > ul > li:hover {
+  background-color: #1b6246;
+  color: #ffffff;
+}
+
+/*main*/
+main {
+  grid-area: main;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30vh 30vh 60vh 30vh 1fr;
+  grid-template-areas: 
+  "title" 
+  "guirland1" 
+  "map" 
+  "guirland2" 
+  "articles";
+}
+
+h1 {
+  grid-area: title;
+  font-size: 70px;
+  color: #1b6246;
+  font-family: "Style Script", cursive;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+}
+
+.guirland.one {
+  grid-area: guirland1;
+}
+.guirland.two {
+    grid-area: guirland2;
+  }
+
+.map {
+  grid-area: map;
+  justify-self: center;
+  margin: 0;
+  padding: 0;
+}
+
+.map > img {
+    max-width: 80vw ;
+    max-height: 60vh;
+  }
+
+.articles {
+  grid-area: articles;
+}
+
+/*footer*/
+footer {
+  grid-area: footer;
 }
