@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
 
 body {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 10vw 1fr 10vw;
-  grid-template-rows: 10vh 400vh 20vh;
-  grid-template-areas:
-    "header header header"
-    ". main ."
-    "footer footer footer";
-  grid-row-gap: 2rem;
-  background-color: #f6e9e3;
-}
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 10vw 1fr 10vw;
+    grid-template-rows: 10vh 200vh 20vh;
+    grid-template-areas:
+      "header header header"
+      ". main ."
+      "footer footer footer";
+    grid-row-gap: 2rem;
+    background-color: #f6e9e3;
+  }
 .guirland {
   background-image: url(../icons/guirlandsnowy.png);
   background-repeat: no-repeat;
@@ -109,98 +109,80 @@ nav > ul > li > ul > li:hover {
 }
 
 /*main*/
-main {
-  grid-area: main;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 30vh 30vh 20vh 1fr;
-  grid-template-areas:
-    "title"
-    "guirland"
-    "text"
-    "articles";
+
+
+
+
+main {
+    grid-area: main;  
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "section1"
+      "section2";
+}
+
+main > section {
+    grid-area: section1 ;
+}
+
+.two {
+    grid-area: section2 ;  
+}
+
+main > section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh 30vh 1fr;
+    grid-template-areas:
+      "title"
+      "guirland"
+      "article";
 }
 
 h1 {
-  grid-area: title;
-  font-size: 70px;
-  color: #1b6246;
-  font-family: "Style Script", cursive;
-  padding: 0;
-  margin: 0;
-  align-self: center;
-}
-
-.main-text {
-    grid-area: text;
-    font-size: 36px;
-  color: #1b6246;
-}
-
-.guirland {
-  grid-area: guirland;
-}
-
-
-.articles {
-    grid-area: articles;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "article1"
-      "article2"
-      "article3"
-      "article4";
-    margin: 0;
+    grid-area:title;
+    font-size: 70px;
+    color: #1b6246;
+    font-family: "Style Script", cursive;
     padding: 0;
-    grid-row-gap: 2rem;
-}
+    margin: 0;
+    align-self: center;
+  }
+  
+  
+  .guirland {
+    grid-area: guirland;
+  }
 
-.articles > article {
+main > section > article {
     display: grid;
     grid-template-columns: 1fr 5vw 1fr 1fr 1fr;
     grid-template-rows: 5vw 1fr 1fr 1fr;
     grid-template-areas:
-    "article-img article-img . . ."
-      "article-img article-img article-title article-title article-title"
-      "article-img article-img article-text article-text article-text"
-      ". emptybox article-text article-text article-text";
+    ".  emptybox article-text article-text article-text"
+    "article-img article-img article-text article-text article-text"
+    "article-img article-img article-text article-text article-text"
+    "article-img article-img . . . ";
     margin: 0;
     padding: 0;
     grid-row-gap: 0;
     grid-column-gap: 0;
 }
 
-.articles > .even {
-    grid-template-columns: 1fr  1fr 1fr 5vw 1fr;
-    grid-template-rows: 5vw 1fr 1fr 1fr;
+.even {
     grid-template-areas:
-    ". . . article-img article-img"
-      "article-title article-title article-title article-img article-img"
-      "article-text article-text article-text article-img article-img"
-      "article-text article-text article-text emptybox ."; 
+    "article-text article-text article-text article-text ."
+    "article-text article-text article-text article-text ."
+    "article-text article-text article-text article-text ."
+    ". . . . . ";  
 }
 
-.article-title {
-grid-area: article-title;
-margin: 0;
-padding: 0;
-background-color: #c5ad9d;
-}
 
-main > article > h2 {
-    grid-area: nav-heading;
-    font-size: 46px;
-    color: #1b6246;
-    font-family: 'Style Script', cursive;
-    margin: 0;
-    padding: 0;
-    
-}
-
-.article-text {
+section > article >.article-text {
     grid-area: article-text;
     background-color: #c5ad9d;
     margin: 0;
@@ -214,12 +196,6 @@ main > article > h2 {
 }
 
 
-.articles > article > figure {
-    grid-area: article-img;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-}
 
 figure {
     background-position: center;
@@ -227,20 +203,12 @@ figure {
     background-size: cover;
 }
 
-.events-img-1 {
-    background-image: url(../img/events/events1.png);
-}
-
-.events-img-2 {
-    background-image: url(../img/events/events2.png);
-}
-
-.events-img-3 {
-    background-image: url(../img/events/events3.png);
-}
-
-.events-img-4 {
-    background-image: url(../img/events/events4.png);
+.article-img {
+    background-image: url(../img/place.gif);
+    grid-area: article-img;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
 .emptybox {

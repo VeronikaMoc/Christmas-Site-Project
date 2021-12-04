@@ -5,7 +5,7 @@ body {
   padding: 0;
   display: grid;
   grid-template-columns: 10vw 1fr 10vw;
-  grid-template-rows: 10vh 400vh 20vh;
+  grid-template-rows: 10vh 300vh 20vh;
   grid-template-areas:
     "header header header"
     ". main ."
@@ -147,12 +147,11 @@ h1 {
     grid-area: articles;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
       "article1"
       "article2"
-      "article3"
-      "article4";
+      "article3";
     margin: 0;
     padding: 0;
     grid-row-gap: 2rem;
@@ -227,21 +226,18 @@ figure {
     background-size: cover;
 }
 
-.events-img-1 {
-    background-image: url(../img/events/events1.png);
+.history-img-1 {
+    background-image: url(../img/history/history1.png);
 }
 
-.events-img-2 {
-    background-image: url(../img/events/events2.png);
+.history-img-2 {
+    background-image: url(../img/history/history2.png);
 }
 
-.events-img-3 {
-    background-image: url(../img/events/events3.png);
+.history-img-3 {
+    background-image: url(../img/history/history3.png);
 }
 
-.events-img-4 {
-    background-image: url(../img/events/events4.png);
-}
 
 .emptybox {
     grid-area: emptybox;
