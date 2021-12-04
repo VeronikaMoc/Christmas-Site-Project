@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 10vw 1fr 10vw;
+  grid-template-rows: 10vh 400vh 20vh;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  grid-row-gap: 2rem;
+  background-color: #f6e9e3;
+}
+.guirland {
+  background-image: url(../icons/guirlandsnowy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+/*header*/
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 5vw 10vw 1fr 10vw 10vw 5vw;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    ". logo . language home ."
+    ". logo . language home .";
+
+  background-color: #1b6246;
+}
+header > nav {
+  grid-area: language;
+  justify-self: center;
+}
+
+.logo-box {
+  grid-area: logo;
+}
+.logo {
+    max-width: 10vh;
+    max-height: 10vh;
+  justify-self: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  padding: 10px;
+  background-color: #ffffff;
+  justify-self: center;
+  text-align: center;
+  transition: 0.3s ease-in;
+  color: #1b6246;
+}
+
+nav > ul > li > ul > li {
+  margin-top: 15px;
+}
+
+nav > ul > li > ul {
+  display: none;
+}
+
+nav > ul > li:hover {
+  cursor: pointer;
+  background-color: #1b6246;
+  color: #ffffff;
+}
+
+nav > ul > li:hover > ul {
+  display: contents;
+}
+
+nav > ul > li > ul > li:hover {
+  background-color: #1b6246;
+  color: #ffffff;
+}
+
+.home {
+    grid-area: home;
+    align-self: center;
+    justify-self: center;
+    transition: 0.3s ease-in;
+}
+
+.home > a {
+
+  font-size: 36px;
+  color: #ffffff;
+  font-family: "Style Script", cursive;
+  padding: 0;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.home:hover > a {
+    background-color: #ffffff;
+    color: #82a396;  
+}
+
+/*main*/
+main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30vh 30vh 20vh 1fr;
+  grid-template-areas:
+    "title"
+    "guirland"
+    "text"
+    "articles";
+}
+
+h1 {
+  grid-area: title;
+  font-size: 70px;
+  color: #1b6246;
+  font-family: "Style Script", cursive;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+}
+
+.main-text {
+    grid-area: text;
+    font-size: 36px;
+  color: #1b6246;
+}
+
+.guirland {
+  grid-area: guirland;
+}
+
+
+.articles {
+    grid-area: articles;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "article1"
+      "article2"
+      "article3"
+      "article4";
+    margin: 0;
+    padding: 0;
+    grid-row-gap: 2rem;
+}
+
+.articles > article {
+    display: grid;
+    grid-template-columns: 1fr 5vw 1fr 1fr 1fr;
+    grid-template-rows: 5vw 1fr 1fr 1fr;
+    grid-template-areas:
+    "article-img article-img . . ."
+      "article-img article-img article-title article-title article-title"
+      "article-img article-img article-text article-text article-text"
+      ". emptybox article-text article-text article-text";
+    margin: 0;
+    padding: 0;
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+}
+
+.articles > .even {
+    grid-template-columns: 1fr  1fr 1fr 5vw 1fr;
+    grid-template-rows: 5vw 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . . article-img article-img"
+      "article-title article-title article-title article-img article-img"
+      "article-text article-text article-text article-img article-img"
+      "article-text article-text article-text emptybox ."; 
+}
+
+.article-title {
+grid-area: article-title;
+margin: 0;
+padding: 0;
+background-color: #c5ad9d;
+}
+
+main > article > h2 {
+    grid-area: nav-heading;
+    font-size: 46px;
+    color: #1b6246;
+    font-family: 'Style Script', cursive;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.article-text {
+    grid-area: article-text;
+    background-color: #c5ad9d;
+    margin: 0;
+    padding: 0;
+}
+
+.article-text > p {
+    color: #ffffff;
+    margin: 20px;
+    font-size: 22px;
+}
+
+
+.articles > article > figure {
+    grid-area: article-img;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+figure {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.events-img-1 {
+    background-image: url(../img/events/events1.png);
+}
+
+.events-img-2 {
+    background-image: url(../img/events/events2.png);
+}
+
+.events-img-3 {
+    background-image: url(../img/events/events3.png);
+}
+
+.events-img-4 {
+    background-image: url(../img/events/events4.png);
+}
+
+.emptybox {
+    grid-area: emptybox;
+    background-color: #c5ad9d;
+    margin: 0;
+    padding: 0;
+}

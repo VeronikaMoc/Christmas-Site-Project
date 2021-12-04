@@ -5,7 +5,7 @@ body {
   padding: 0;
   display: grid;
   grid-template-columns: 10vw 1fr 10vw;
-  grid-template-rows: 150vh 120vh 20vh 80vh 20vh;
+  grid-template-rows: 130vh 120vh 20vh 80vh 20vh;
   grid-template-areas:
     "header header header"
     ". main ."
@@ -22,10 +22,9 @@ header {
   grid-area: header;
   display: grid;
   grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
-  grid-template-rows: 1fr 1fr 20vh 100vh;
+  grid-template-rows: 10vh 20vh 100vh;
   grid-template-areas:
     ". logo . language ."
-    ". logo . . ."
     "guirland guirland guirland guirland guirland"
     "hero-img hero-img hero-img hero-img hero-img";
 
@@ -39,9 +38,9 @@ header > nav {
   grid-area: logo;
 }
 .logo {
-  width: 200px;
-  height: 250px;
   justify-self: center;
+  max-width: 10vh;
+  max-height: 10vh;
 }
 
 header > figure {
