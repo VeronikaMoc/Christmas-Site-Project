@@ -5,21 +5,13 @@ body {
   padding: 0;
   display: grid;
   grid-template-columns: 10vw 1fr 10vw;
-  grid-template-rows: 10vh 200vh 20vh;
+  grid-template-rows: 10vh 500vh 20vh;
   grid-template-areas:
     "header header header"
     ". main ."
     "footer footer footer";
   grid-row-gap: 2rem;
   background-color: #f6e9e3;
-}
-.guirland {
-  background-image: url(../icons/guirlandsnowy.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  margin: 0;
-  padding: 0;
 }
 
 /*header*/
@@ -106,36 +98,16 @@ nav > ul > li > ul > li:hover {
   color: #82a396;
 }
 
-/*main*/
-
 main {
   grid-area: main;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    "section1"
-    "section2"
-    "section2";
-}
-
-main > section {
-  grid-area: section1;
-}
-
-.two {
-  grid-area: section2;
-}
-
-main > section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20vh 20vh 1fr;
+  grid-template-rows: 30vh 30vh 1fr;
   grid-template-areas:
     "title"
     "guirland"
-    "article";
+    "articles";
 }
 
 h1 {
@@ -150,64 +122,94 @@ h1 {
 
 .guirland {
   grid-area: guirland;
-}
-
-main > section > article {
-  display: grid;
-  grid-template-columns: 1fr 5vw 1fr 1fr 1fr;
-  grid-template-rows: 5vw 1fr 1fr 1fr;
-  grid-template-areas:
-    ".  emptybox article-text article-text article-text"
-    "article-img article-img article-text article-text article-text"
-    "article-img article-img article-text article-text article-text"
-    "article-img article-img . . . ";
-  margin: 0;
-  padding: 0;
-  grid-row-gap: 0;
-  grid-column-gap: 0;
-}
-
-.even {
-  grid-template-areas:
-    "article-text article-text article-text article-text ."
-    "article-text article-text article-text article-text ."
-    "article-text article-text article-text article-text ."
-    ". . . . . ";
-}
-
-section > article > .article-text {
-  grid-area: article-text;
-  background-color: #c5ad9d;
-  margin: 0;
-  padding: 0;
-}
-
-.article-text > p {
-  color: #ffffff;
-  margin: 40px;
-  font-size: 46px;
-  font-family: "Style Script", cursive;
-}
-
-figure {
-  background-position: center;
+  background-image: url(../../icons/guirlandsnowy.png);
   background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.article-img {
-  background-image: url(../img/place.gif);
-  grid-area: article-img;
-  background-color: #ffffff;
+  background-size: contain;
+  background-position: center;
   margin: 0;
   padding: 0;
 }
 
-.emptybox {
-  grid-area: emptybox;
+.articles {
+  grid-area: articles;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "article1"
+    "article2"
+    "article3"
+    "article4"
+    "article5"
+    "article6";
+}
+
+.one {
+  grid-area: article1;
+}
+
+.two {
+  grid-area: article2;
+}
+
+.three {
+  grid-area: article3;
+}
+
+.four {
+  grid-area: article4;
+}
+
+.five{
+  grid-area: article5;
+}
+.six {
+  grid-area: article6;
+}
+
+.articles > article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20vh 1fr;
+  grid-template-areas:
+    "stall-heading stall-heading stall-img"
+    "stall-text stall-text stall-img";
+  margin: 0;
+  padding: 0;
+}
+
+.articles > .even {
+  grid-template-areas:
+    "stall-img stall-heading stall-heading"
+    "stall-img stall-text stall-text";
+}
+
+.articles > article > figure {
+  grid-area: stall-img;
   background-color: #c5ad9d;
   margin: 0;
   padding: 0;
+}
+
+.articles > article > h2 {
+  grid-area: stall-heading;
+
+  font-size: 46px;
+  color: #1b6246;
+  font-family: "Style Script", cursive;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.articles > article > p {
+  grid-area: stall-text;
+  justify-self: center;
+  font-size: 20px;
+  color: #1b6246;
+  margin: 30px;
 }
 
 footer {
@@ -239,7 +241,6 @@ footer {
 .icon-web {
   grid-area: icon-web;
 }
-
 @media screen and (max-width: 1600px) {
   body {
     grid-template-columns: 1fr;
@@ -248,23 +249,51 @@ footer {
       "main"
       "footer";
   }
+
+  main {
+    grid-template-rows: 20vh 20vh 1fr;
+  }
   h1 {
     justify-self: center;
   }
 }
+
 @media screen and (max-width: 1400px) {
 }
 
 @media screen and (max-width: 1200px) {
+
+body {
+  grid-template-rows: 10vh 600vh 20vh;
+}
+
+
   header {
     grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
     grid-template-rows: 1fr ;
     grid-template-areas:
       ". logo  home language .";
   }
+
+
+
+  .articles > article {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "stall-heading stall-img"
+      "stall-text stall-img";
+  }
+  
+  .articles > .even {
+    grid-template-areas:
+    "stall-img stall-heading"
+    "stall-img stall-text";
+  }
+
 }
 
 @media screen and (max-width: 1000px) {
+
   header {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -273,56 +302,47 @@ footer {
     justify-items: center;
   }
 
-  nav {
-    margin-top: 10px;
-  }
-
-  .article-text > p {
-    font-size: 20px;
-  }
-
-  h1 {
-    font-size: 50px;
-  }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 750px) {
   body {
-    grid-template-rows: 10vh 150vh 10vh;
-    grid-row-gap: 0;
+    grid-template-rows: 10vh 650vh 10vh;
   }
 
-  .even {
+  .articles > article, .articles > .even  {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "article-text";
+    grid-template-rows: 1fr 20vh 1fr;
+    grid-template-areas:
+    "stall-img"
+    "stall-heading"
+    "stall-text";
+  }
+  
+}
+
+@media screen and (max-width: 550px) {
+
+  body {
+    grid-template-rows: 10vh 900vh 10vh;
   }
 
-  main > section {
+  main {
     grid-template-rows: 10vh 10vh 1fr;
   }
 
-
-  main > section > article {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+  .articles > article, .articles > .even  {
+    grid-template-columns: 1fr;
+    grid-template-rows: 30vh 20vh 70vh;
     grid-template-areas:
-      "article-text article-img";
-  }
-  .emptybox {
-    display: none;
+    "stall-img"
+    "stall-heading"
+    "stall-text";
   }
 }
+@media screen and (max-width: 450px) {
 
-@media screen and (max-width: 400px) {
-  .article-text > p {
-    font-size: 18px;
-  }
 
   h1 {
-    font-size: 28px;
+    font-size: 40px;
   }
 
-  nav {
-    margin-top: 0;
-  }
 }

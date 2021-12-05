@@ -22,15 +22,27 @@ body {
   padding: 0;
 }
 
+em {
+  font-family: "Style Script", cursive;
+  font-size: 2em;
+}
+
+h2 {
+  font-family: "Style Script", cursive;
+  font-size: 2em;
+  color: #ffffff; 
+  margin: 20px;
+  font-weight: 400;
+}
+
 /*header*/
 header {
   grid-area: header;
   display: grid;
-  grid-template-columns: 5vw 10vw 1fr 10vw 10vw 5vw;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
+  grid-template-rows: 1fr ;
   grid-template-areas:
-    ". logo . language home ."
-    ". logo . language home .";
+    ". logo home language  .";
 
   background-color: #1b6246;
 }
@@ -114,7 +126,7 @@ main {
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 30vh 30vh 20vh 1fr;
+  grid-template-rows: 30vh 30vh 40vh 1fr;
   grid-template-areas:
     "title"
     "guirland"
@@ -263,30 +275,152 @@ footer {
     column-gap: 1vw;
   }
   
+  .icons > a > img {
+    max-width: 10vw;
+    max-height: 10vw;
+    margin: 0;
+    padding: 0;
+  }
+  
   .icon-facebook {
     grid-area: icon-facebook;
-    background-image: url(../icons/FB.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100px;
-    height: 100px;
   }
   .icon-instagram {
     grid-area: icon-instagram;
-    background-image: url(../icons/IG.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100px;
-    height: 100px;
   }
   .icon-web {
     grid-area: icon-web;
-    background-image: url(../icons/Aalborgweb.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100px;
-    height: 100px;
   }
+
+  @media screen and (max-width: 1600px) {
+    body {
+     
+      grid-template-columns: 1fr;
+      grid-template-rows: 10vh 300vh 20vh;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+  
+    }
+    h1 {
+      justify-self: center;
+    }
+  
+    .main-text {
+      justify-self: center;
+      margin: 20px;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    main {
+      grid-template-columns: 1fr;
+      grid-template-rows: 20vh 20vh 40vh 1fr;
+      grid-template-areas:
+        "title"
+        "guirland"
+        "text"
+        "articles";
+    }
+  
+  }
+  
+  @media screen and (max-width: 1200px) {
+    body {
+      grid-template-columns: 1fr;
+      grid-template-rows: 10vh 450vh 10vh;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+  
+    }
+    header {
+      grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
+      grid-template-rows: 1fr ;
+      grid-template-areas:
+        ". logo  home language .";
+    }
+
+    main {
+      grid-template-columns: 1fr;
+      grid-template-rows: 10vh 10vh 60vh 1fr;
+      grid-template-areas:
+        "title"
+        "guirland"
+        "text"
+        "articles";
+    } 
+
+    .main-text {
+      font-size: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 1000px) {
+
+    body {
+      grid-template-rows: 10vh 280vh 10vh;
+      grid-template-areas: "header" "main" "footer";
+    }
+    header {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: " logo home language   ";
+      grid-column-gap: 5vw;
+      justify-items: center;
+    }
+  
+    .articles > article,
+    .articles > .even {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 20vh 1fr  1fr;
+      grid-template-areas:
+        "article-title article-img "
+        "article-text article-img"
+        "article-text article-img";
+    }
+  
+    .emptybox {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    body {
+      grid-template-rows: 10vh 400vh 10vh;
+    }
+    .articles > article,
+    .articles > .even {
+      grid-template-columns: 1fr;
+      grid-template-rows: 30vh 10vh 1fr;
+      grid-template-areas:
+        "article-img "
+        "article-title"
+        "article-text";}
+  
+        main {
+          grid-template-columns: 1fr;
+          grid-template-rows: 10vh 10vh 60vh 1fr;
+          grid-template-areas:
+            "title"
+            "guirland"
+            "text"
+            "articles";
+        } 
+
+        .main-text {
+          font-size: 18px;
+        }
+
+        .events-img-3 {
+          background-position: top;
+      }
+  }
+
+@media screen and (max-width: 400px) {
+  .articles > article,
+    .articles > .even {
+      grid-template-rows: 20vh 10vh 1fr;}
+} 
+
+  

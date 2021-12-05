@@ -24,90 +24,87 @@ body {
 
 /*header*/
 header {
-    grid-area: header;
-    display: grid;
-    grid-template-columns: 5vw 10vw 1fr 10vw 10vw 5vw;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      ". logo . language home ."
-      ". logo . language home .";
-  
-    background-color: #1b6246;
-  }
-  header > nav {
-    grid-area: language;
-    justify-self: center;
-  }
-  
-  .logo-box {
-    grid-area: logo;
-  }
-  .logo {
-    max-width: 10vh;
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
+  grid-template-rows: 1fr ;
+  grid-template-areas:
+    ". logo home language  .";
+
+  background-color: #1b6246;
+}
+header > nav {
+  grid-area: language;
+  justify-self: center;
+}
+
+.logo-box {
+  grid-area: logo;
+}
+.logo {
+  max-width: 10vh;
   max-height: 10vh;
-    justify-self: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-  }
-  
-  nav li {
-    padding: 10px;
-    background-color: #ffffff;
-    justify-self: center;
-    text-align: center;
-    transition: 0.3s ease-in;
-    color: #1b6246;
-  }
-  
-  nav > ul > li > ul > li {
-    margin-top: 15px;
-  }
-  
-  nav > ul > li > ul {
-    display: none;
-  }
-  
-  nav > ul > li:hover {
-    cursor: pointer;
-    background-color: #1b6246;
-    color: #ffffff;
-  }
-  
-  nav > ul > li:hover > ul {
-    display: contents;
-  }
-  
-  nav > ul > li > ul > li:hover {
-    background-color: #1b6246;
-    color: #ffffff;
-  }
-  
-  .home {
-      grid-area: home;
-      align-self: center;
-      justify-self: center;
-      transition: 0.3s ease-in;
-  }
-  
-  .home > a {
-  
-    font-size: 36px;
-    color: #ffffff;
-    font-family: "Style Script", cursive;
-    padding: 0;
-    margin: 0;
-    padding: 5px 10px;
-    border-radius: 4px;
-    text-decoration: none;
-  }
-  
-  .home:hover > a {
-      background-color: #ffffff;
-      color: #82a396;  
-  }
-  
+  justify-self: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  padding: 10px;
+  background-color: #ffffff;
+  justify-self: center;
+  text-align: center;
+  transition: 0.3s ease-in;
+  color: #1b6246;
+}
+
+nav > ul > li > ul > li {
+  margin-top: 15px;
+}
+
+nav > ul > li > ul {
+  display: none;
+}
+
+nav > ul > li:hover {
+  cursor: pointer;
+  background-color: #1b6246;
+  color: #ffffff;
+}
+
+nav > ul > li:hover > ul {
+  display: contents;
+}
+
+nav > ul > li > ul > li:hover {
+  background-color: #1b6246;
+  color: #ffffff;
+}
+
+.home {
+  grid-area: home;
+  align-self: center;
+  justify-self: center;
+  transition: 0.3s ease-in;
+}
+
+.home > a {
+  font-size: 36px;
+  color: #ffffff;
+  font-family: "Style Script", cursive;
+  padding: 0;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.home:hover > a {
+  background-color: #ffffff;
+  color: #82a396;
+}
 
 /*main*/
 main {
@@ -192,7 +189,7 @@ main > div > article {
   grid-area: stall-heading;
   font-size: 46px;
   color: #1b6246;
-  font-family: 'Style Script', cursive;
+  font-family: "Style Script", cursive;
   margin: 0;
   padding: 0;
   align-self: center;
@@ -201,6 +198,10 @@ main > div > article {
 
 .articles > article > p {
   grid-area: stall-text;
+  justify-self: center;
+  font-size: 20px;
+  color: #1b6246;
+  margin: 30px;
 }
 
 .articles > article > .button {
@@ -249,8 +250,6 @@ main > div > article {
 .article-five {
   grid-area: article5;
 }
-
-
 
 .articles > article > figure {
   margin: 0;
@@ -306,30 +305,160 @@ footer {
   column-gap: 1vw;
 }
 
+.icons > a > img {
+  max-width: 10vw;
+  max-height: 10vw;
+  margin: 0;
+  padding: 0;
+}
+
 .icon-facebook {
   grid-area: icon-facebook;
-  background-image: url(../icons/FB.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100px;
-  height: 100px;
 }
 .icon-instagram {
   grid-area: icon-instagram;
-  background-image: url(../icons/IG.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100px;
-  height: 100px;
 }
 .icon-web {
   grid-area: icon-web;
-  background-image: url(../icons/Aalborgweb.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100px;
-  height: 100px;
+}
+@media screen and (max-width: 1600px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+  h1 {
+    justify-self: center;
+  }
+
+  .main-text {
+    justify-self: center;
+    margin: 20px;
+  }
+
+  .articles > article > p {
+    grid-area: stall-text;
+    justify-self: center;
+    font-size: 26px;
+    color: #1b6246;
+    margin: 30px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main {
+    grid-template-rows: 20vh 20vh 60vh 20vh 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  body {
+    grid-template-rows: 10vh 850vh 20vh;
+  }
+  header {
+    grid-template-columns: 5vw 10vw 1fr 10vw 5vw 10vw 5vw;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      ". logo . language . home ."
+      ". logo . language . home .";
+  }
+
+  h1 {
+    font-size: 30px ;
+  }
+
+  main > div > article {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "stall-heading stall-img"
+      "stall-text stall-img"
+      "stall-button stall-img";
+  }
+
+  .even {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "stall-img stall-heading"
+      "stall-img stall-text"
+      "stall-img stall-button";
+  }
+
+  .articles > article > figure {
+    background-size: contain;
+  }
+
+  .map {
+    align-self: center;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    grid-template-rows: 10vh 650vh 10vh;
+  }
+
+  header {
+    grid-template-columns: 5vw 10vw 1fr 10vw 5vw;
+    grid-template-rows: 1fr ;
+    grid-template-areas:
+      ". logo  home language .";
+  }
+
+  main {
+    grid-template-rows: 20vh 20vh 40vh 20vh 1fr;
+  }
+
+  main > div > article, .even {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40vh 20vh 15vh 20vh 5vh;
+    grid-template-areas:
+      "stall-img"
+      "stall-heading"
+      "stall-text"
+      "stall-button"
+      ".";
+  }
+
+  
+
+}
+@media screen and (max-width: 750px) {
+
+  body {
+    grid-template-rows: 10vh 650vh 10vh;
+  }
+
+  main > div > article, .even {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40vh 20vh 15vh 20vh 2vh;
+  
+  }
+
+}
+ 
+@media screen and (max-width: 550px) {
+  body {
+    grid-template-rows: 10vh 650vh 10vh;
+  }
+}
+@media screen and (max-width: 450px) {
+
+  body {
+    grid-template-rows: 10vh 750vh 10vh;
+  }
+
+main > div > article, .even {
+  grid-template-columns: 1fr;
+  grid-template-rows: 40vh 20vh 40vh 20vh 5vh;
+  grid-template-areas:
+    "stall-img"
+    "stall-heading"
+    "stall-text"
+    "stall-button"
+    ".";
+}
 }
